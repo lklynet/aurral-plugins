@@ -1,0 +1,31 @@
+{
+  "id": "road-trip",
+  "name": "Road Trip",
+  "version": "0.2.0",
+  "api": 1,
+  "description": "Turns Google Maps directions into a playlist as long as the drive, with songs named after the towns you pass and artists from those towns, in the order you reach them.",
+  "repository": "https://github.com/lklynet/aurral-road-trip",
+  "uses": [
+    "routing.openstreetmap.de",
+    "nominatim.openstreetmap.org",
+    "query.wikidata.org",
+    "musicbrainz.org",
+    "listenbrainz.org",
+    "deezer.com"
+  ],
+  "settings": [],
+  "test": false,
+  "actions": [],
+  "events": [],
+  "downloadSource": null,
+  "importList": {
+    "label": "Road Trip",
+    "hosts": [
+      "google.com",
+      "goo.gl"
+    ],
+    "sync": false
+  },
+  "schedule": null,
+  "apiAccess": false
+}
