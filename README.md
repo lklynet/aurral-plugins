@@ -2,7 +2,7 @@
 
 An [Aurral](https://github.com/lklynet/aurral) plugin that turns Google Maps directions into a playlist as long as the drive.
 
-Songs play near the places they belong to. Pass La Grande and you hear Laura Gibson's "La Grande". Roll into Boise and it's Built to Spill. Each stretch of road gets songs named after the towns along it and music by artists born or formed there. Some picks are puns. Driving past Carson, Washington can get you The Beach Boys' "Johnny Carson". I kept those.
+Songs play near the places they belong to. Pass La Grande and you hear Laura Gibson's "La Grande". Roll into Boise and it's Built to Spill. Each stretch of road gets songs named after the towns along it and music by artists born or formed there. 
 
 ## Install
 
