@@ -1,0 +1,29 @@
+{
+  "id": "setlists",
+  "name": "Setlists",
+  "version": "0.1.0",
+  "api": 1,
+  "description": "Imports setlist.fm links as playlists: one show in order, or an artist's current tour with every song played on it so far.",
+  "repository": "https://github.com/lklynet/aurral-plugins",
+  "uses": ["api.setlist.fm"],
+  "settings": [
+    {
+      "key": "apiKey",
+      "label": "API key",
+      "type": "password",
+      "required": true,
+      "help": "Apply for a free key at setlist.fm/settings/api. It is free for non-commercial use."
+    }
+  ],
+  "test": true,
+  "actions": [],
+  "events": [],
+  "downloadSource": null,
+  "importList": {
+    "label": "setlist.fm",
+    "hosts": ["setlist.fm"],
+    "sync": true
+  },
+  "schedule": null,
+  "apiAccess": false
+}

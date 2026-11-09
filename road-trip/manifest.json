@@ -1,10 +1,10 @@
 {
   "id": "road-trip",
   "name": "Road Trip",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "api": 1,
   "description": "Turns Google Maps directions into a playlist as long as the drive, with songs named after the towns you pass and artists from those towns, in the order you reach them.",
-  "repository": "https://github.com/lklynet/aurral-road-trip",
+  "repository": "https://github.com/lklynet/aurral-plugins",
   "uses": [
     "routing.openstreetmap.de",
     "nominatim.openstreetmap.org",

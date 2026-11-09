@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
-const USER_AGENT = "AurralRoadTrip/1.0 ( https://github.com/lklynet/aurral-road-trip )";
+const USER_AGENT = "AurralRoadTrip/1.0 ( https://github.com/lklynet/aurral-plugins )";
 const CACHE_VERSION = 3;
 const BUDGET_MS = 65_000;
 const MAX_SAMPLES = 80;
