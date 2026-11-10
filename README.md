@@ -4,6 +4,7 @@ Official plugins for [Aurral](https://github.com/lklynet/aurral).
 
 | Plugin | What it does |
 | --- | --- |
+| [Lidarr](lidarr) | Downloads albums through Lidarr and plays them from Lidarr's folders. |
 | [Road Trip](road-trip) | Turns Google Maps directions into a playlist as long as the drive. |
 | [Setlists](setlists) | Imports setlist.fm links as playlists: one show, or an artist's current tour. |
 

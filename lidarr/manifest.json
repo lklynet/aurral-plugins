@@ -1,0 +1,50 @@
+{
+  "id": "lidarr",
+  "name": "Lidarr",
+  "version": "0.1.0",
+  "api": 1,
+  "description": "Downloads albums through Lidarr. Lidarr grabs and files each album in its own folder, and Aurral plays it from there.",
+  "repository": "https://github.com/lklynet/aurral-plugins",
+  "uses": ["Your Lidarr server", "Lidarr's music folders"],
+  "settings": [
+    {
+      "key": "url",
+      "label": "Lidarr URL",
+      "type": "text",
+      "required": true,
+      "help": "Like http://192.168.1.10:8686"
+    },
+    {
+      "key": "apiKey",
+      "label": "API key",
+      "type": "password",
+      "required": true,
+      "help": "In Lidarr, under Settings > General."
+    },
+    {
+      "key": "rootFolder",
+      "label": "Root folder for new artists",
+      "type": "text",
+      "help": "Leave empty to use Lidarr's first root folder."
+    },
+    {
+      "key": "lidarrPath",
+      "label": "Music path in Lidarr",
+      "type": "text",
+      "help": "Only when Lidarr and Aurral see the music at different paths, as with Docker. Like /music"
+    },
+    {
+      "key": "aurralPath",
+      "label": "Same folder in Aurral",
+      "type": "text",
+      "help": "Like /mnt/media/music"
+    }
+  ],
+  "test": true,
+  "actions": [],
+  "events": [],
+  "downloadSource": { "tracks": false, "albums": true },
+  "importList": null,
+  "schedule": null,
+  "apiAccess": false
+}
