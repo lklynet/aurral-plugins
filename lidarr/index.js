@@ -1,5 +1,3 @@
-import { readdir } from "node:fs/promises";
-
 const TAG = "aurral-plugin";
 const STUCK = new Set(["importBlocked", "importFailed"]);
 
@@ -31,13 +29,6 @@ const client = (settings) =>
     if (!response.ok) throw new Error(await problem(response));
     return response.json();
   };
-
-function aurralPath(settings, path) {
-  const from = trimSlashes(settings.lidarrPath);
-  const to = trimSlashes(settings.aurralPath);
-  if (!from || !to) return path;
-  return path === from || path.startsWith(from + "/") ? to + path.slice(from.length) : path;
-}
 
 function newArtistRoot(settings, roots) {
   const wanted = trimSlashes(settings.rootFolder);
@@ -100,14 +91,6 @@ export default {
     const call = client(settings);
     const [{ version }, roots] = await Promise.all([call("/system/status"), call("/rootfolder")]);
     newArtistRoot(settings, roots);
-    for (const root of roots) {
-      const folder = aurralPath(settings, root.path);
-      await readdir(folder).catch(() => {
-        throw new Error(
-          `Aurral can't open ${folder}, where Lidarr keeps music. If Aurral sees that folder at another path, fill in both path settings.`,
-        );
-      });
-    }
     return { message: `Connected to Lidarr ${version}` };
   },
   downloadSource: {
@@ -140,7 +123,7 @@ export default {
       const finish = async () => {
         const files = await call(`/trackfile?albumId=${albumId}`);
         if (!files.length) throw new Error("Lidarr found nothing to download for this album");
-        return { done: true, imported: files.map((file) => aurralPath(settings, file.path)) };
+        return { done: true, filed: files.length };
       };
       if (complete(await call(`/album/${albumId}`))) return finish();
       const queue = await call(`/queue/details?albumIds=${albumId}`);
