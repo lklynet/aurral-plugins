@@ -2,18 +2,18 @@
 
 An [Aurral](https://github.com/lklynet/aurral) plugin that downloads albums through [Lidarr](https://lidarr.audio).
 
-When Aurral wants an album, the plugin asks Lidarr for it. Lidarr grabs it with its own indexers and download clients and files it in its own folder. Aurral then plays the album from that folder and never moves, renames, or deletes it.
+When Aurral wants an album, the plugin asks Lidarr for it. Lidarr grabs it with its own indexers and download clients and files it in its own folder. Aurral finds the album in that folder and plays it from there, and never moves, renames, or deletes it. The plugin sends no file paths, so Lidarr and Aurral can mount the music wherever they like.
 
 ## Install
 
 Needs Aurral 3.0, currently nightly.
 
 1. In **Settings > Library**, add each of Lidarr's root folders as a read-only folder.
-2. In **Settings > Plugins**, paste `https://github.com/lklynet/aurral-plugins` under **Install from a link**, select **Check**, and choose **Lidarr**.
+2. In **Settings > Plugins**, select **use the official plugins** under **Install from a link**, and choose **Lidarr**.
 3. Open **Lidarr** and enter Lidarr's URL and API key. The key is in Lidarr under **Settings > General**.
 4. Select **Test**, then turn the plugin on.
 
-If Lidarr and Aurral see the music at different paths, as they often do in Docker, fill in both path settings. With Lidarr's root folder at `/music` and the same folder mounted in Aurral at `/mnt/media/music`, enter those two.
+Turn on tags in Lidarr under **Settings > Metadata > Tag Audio Files with Metadata**. Aurral finds an album by its MusicBrainz tags, and only by artist and album name without them.
 
 ## Use
 
