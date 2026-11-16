@@ -125,17 +125,17 @@ function cleanApple(apple) {
 
 // Keeps one cover and drops the other pictures, such as disc scans and
 // booklets. An oversized cover goes too when the plugin will embed a new one.
-function cleanPictures(file, embeddingCovers) {
+function cleanPictures(file, hasNewCover) {
   const pictures = file.tag.pictures ?? [];
   const cover =
     pictures.find((picture) => picture.type === PictureType.FrontCover) ?? pictures.find(isCover);
-  const keep = cover && !(embeddingCovers && cover.data.length > MAX_PICTURE_BYTES) ? [cover] : [];
+  const keep = cover && !(hasNewCover && cover.data.length > MAX_PICTURE_BYTES) ? [cover] : [];
   if (keep.length === pictures.length) return false;
   file.tag.pictures = keep;
   return true;
 }
 
-export function clean(file, kind, { covers }) {
+export function clean(file, kind, hasNewCover) {
   let changed = false;
   const tags = tagsOf(file, kind);
   // Leftover tag types players read before the real one: ID3v1 and APE on an
@@ -155,7 +155,7 @@ export function clean(file, kind, { covers }) {
   if (kept.xiph && cleanXiph(kept.xiph)) changed = true;
   if (kept.id3 && cleanId3(kept.id3)) changed = true;
   if (kept.apple && cleanApple(kept.apple)) changed = true;
-  if (cleanPictures(file, covers)) changed = true;
+  if (cleanPictures(file, hasNewCover)) changed = true;
   return changed;
 }
 

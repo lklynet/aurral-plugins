@@ -251,7 +251,7 @@ async function lyricsFor(run, info) {
 
 function edit(file, info, plan, options) {
   const changes = [];
-  const cleaned = options.clean && clean(file, info.kind, options);
+  const cleaned = options.clean && clean(file, info.kind, Boolean(plan.cover));
   if (plan.cover && embedCover(file, plan.cover, options.replace)) changes.push("covers");
   if (plan.details && addDetails(file, info.kind, plan.details, options.replace))
     changes.push("details");
