@@ -1,0 +1,32 @@
+{
+  "id": "downtify",
+  "name": "Downtify",
+  "version": "0.1.0",
+  "api": 1,
+  "description": "Downloads songs and albums through Downtify. Downtify fetches them with its own sources, covers, lyrics, and tags, and Aurral files them like any download.",
+  "repository": "https://github.com/lklynet/aurral-plugins",
+  "uses": ["Your Downtify server"],
+  "settings": [
+    {
+      "key": "url",
+      "label": "Downtify URL",
+      "type": "text",
+      "required": true,
+      "help": "Like http://192.168.1.10:8611"
+    },
+    {
+      "key": "key",
+      "label": "Key",
+      "type": "password",
+      "required": true,
+      "help": "In Downtify, under Settings > Apps > Aurral."
+    }
+  ],
+  "test": true,
+  "actions": [],
+  "events": [],
+  "downloadSource": { "albums": true },
+  "importList": null,
+  "schedule": null,
+  "apiAccess": false
+}

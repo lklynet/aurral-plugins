@@ -4,6 +4,7 @@ Official plugins for [Aurral](https://github.com/lklynet/aurral).
 
 | Plugin | What it does |
 | --- | --- |
+| [Downtify](downtify) | Downloads songs and albums through Downtify, with its sources, covers, lyrics, and tags. |
 | [Lidarr](lidarr) | Downloads albums through Lidarr and plays them from Lidarr's folders. |
 | [Metadata](metadata) | Embeds covers, saves lyrics, adds release details, cleans junk tags, and adds ReplayGain. |
 | [Road Trip](road-trip) | Turns Google Maps directions into a playlist as long as the drive. |
